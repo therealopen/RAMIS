@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "648e412482723756ca1b54e8"
+  },
+  "firstname": "venance",
+  "middlename": "g",
+  "lastname": "kasara",
+  "email": "venance@kasara.com",
+  "gender": "female",
+  "block": "2",
+  "floor": "2",
+  "room": "4",
+  "wing": "A",
+  "phone": "0694263028",
+  "password": "123",
+  "role": "student",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "648e66ba45dda468dd3db04e"
+  },
+  "firstname": "hussein",
+  "middlename": "mcheni",
+  "lastname": "hassani",
+  "email": "hussein.mcheni@yahoo.com",
+  "gender": "male",
+  "block": "3",
+  "floor": "2",
+  "room": "23",
+  "wing": "A",
+  "phone": "0694263028",
+  "password": "123",
+  "role": "student",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "649436d8740952b563e59a83"
+  },
+  "firstname": "hija",
+  "middlename": "abas",
+  "lastname": "salehe",
+  "email": "hija@gmail.com",
+  "gender": "male",
+  "block": "1",
+  "floor": "1",
+  "room": "5",
+  "wing": "A",
+  "phone": "0694263028",
+  "password": "123",
+  "role": "student",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64943742740952b563e59a8e"
+  },
+  "firstname": "juma",
+  "middlename": "imma",
+  "lastname": "musa",
+  "email": "juma@gmail.com",
+  "gender": "male",
+  "block": "6",
+  "floor": "2",
+  "room": "5",
+  "wing": "A",
+  "phone": "0694263028",
+  "password": "123",
+  "role": "student",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "649488f992f6ba32794f4d8b"
+  },
+  "firstname": "naomi",
+  "middlename": "raphael",
+  "lastname": "daniel",
+  "email": "naomi@gmail.com",
+  "gender": "female",
+  "block": "2",
+  "floor": "4",
+  "room": "54",
+  "wing": "A",
+  "phone": "0694263028",
+  "password": "naomi",
+  "role": "student",
+  "__v": 0
+}]

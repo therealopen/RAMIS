@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 50px; /* Set the height of the footer */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .footer {
+      background-color: #f5f5f5;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .header {
+      background-color: #f5f5f5;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  
+
+<app-top-navigation></app-top-navigation>
+    <router-outlet></router-outlet>
+      <!-- <app-home>
+
+      </app-home> -->
+   
+     
+
+   
+  <footer class="footer">
+    Room Allocation System (RAS).
+  </footer>
+</body>
+</html>
+

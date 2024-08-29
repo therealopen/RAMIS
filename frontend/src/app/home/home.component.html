@@ -1,0 +1,187 @@
+<head>
+
+</head>
+<!-- <nav class="navbar navbar-dark bg-primary">
+   <h2>Dashboard</h2><a href="" id="link2-logout" (click)="logout()"><label id="logged"  *ngIf="userData">({{userData.email}})</label> Logout</a>
+</nav> -->
+<label id="status-left" *ngIf="studentRole || wardenRole || userData" >{{studentRole || wardenRole}}</label>
+<label id="status-right" *ngIf="successfulLoginMessage" > {{successfulLoginMessage}}</label>
+<label id="status-right" class="text-dabger" *ngIf="successMessage" > {{successMessage}}</label>
+
+<div class="container mt-6">
+  <h1 class="alert alert-info" style="padding: auto;margin-top: 50px;">Profile Details</h1>
+  <div id="welcome" class="badge-badge-primary"><label for="" id="Welcome">fullname: </label>
+  <label id="fullname" *ngIf="userData">
+    
+      
+     {{ userData.firstname |uppercase}} {{userData.middlename | uppercase}} {{userData.lastname | uppercase}}
+    
+  </label>
+</div>
+    <table class="table">
+      <thead>   
+      <tr *ngIf="userData">
+          <th scope="col">Firstname:</th>
+          <td>{{userData.firstname  | uppercase}}</td>
+      
+      
+          <th scope="col">middlename:</th>
+          <td>{{userData.middlename | uppercase}}</td>
+     
+        <th>Lastname:</th>
+        <td>{{userData.lastname  | uppercase}}</td>
+      
+        <th scope="col">Email:</th>
+        <td>{{userData.email}}</td>
+        <th scope="col">phone:</th>
+        <td>{{this.userData.phone | uppercase}}</td>
+      </tr>
+      <tr *ngIf="userData">
+        <th scope="col">gender:</th>
+        <td>{{userData.gender | uppercase}}</td>
+     
+        <th scope="col">block name:</th>
+        <td>{{this.userData.block | uppercase}}</td>
+     
+        <th scope="col">floor:</th>
+        <td>{{this.userData.floor  | uppercase}}</td>
+      
+        <th scope="col">room:</th>
+        <td>{{userData.room}}</td>
+       
+          <th scope="col">wing:</th>
+        <td>{{this.userData.wing | uppercase}}</td>
+        
+      </tr>
+
+     </thead>
+     </table>
+     <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Change Password
+</button>
+
+    </div> 
+  
+<!-- update passwored -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div for="" *ngIf="successMessage" class="alert alert-success">{{successMessage}}</div>
+
+        <form [formGroup]="updateForm" (ngSubmit)="updateData()">
+        <div class="form-group">
+          <label for="opassword">Old Password</label>
+          <input formControlName="opassword" type="password" class="form-control form-control-sm" id="opassword" placeholder="Old password">
+        </div>
+        <div class="form-group">
+          <label for="npassword">New Password</label>
+          <input formControlName="npassword" type="password" minlength="6" maxlength="16"  class="form-control form-control-sm" id="npassword" placeholder="New password">
+        </div>
+        <div class="form-group">
+          <label for="cpassword">Confirm Password</label>
+          <input formControlName="cpassword" type="password" minlength="6" maxlength="16" class="form-control form-control-sm" id="cpassword" placeholder="Confirm new password">
+        </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Save changes" >
+      </div>
+      
+    </form>
+    </div>
+    
+  </div>
+</div>
+
+
+
+    <style>
+      h1{
+        text-transform: capitalize;
+        font-size: 16px;
+      }
+    #link2-logout{
+        text-decoration: none;
+        font-size: 12px;
+        color: #f8f8f8;
+        padding: auto;
+        margin-right: 5px;
+        float: right;
+        font-weight: 600;
+    }
+    tr{
+      margin:10px;
+    }
+    td{
+      font-size: 12px;
+      padding: 10px;
+      margin: 20px;
+    }
+    th{
+      text-transform: capitalize;
+      align-content: center;
+      margin: 15px;
+      padding: 10px;
+    }
+    H4{
+      padding-left: 5px;
+    }
+    #logged{
+      font-size: 14px;
+      color:#f8f8f8;
+      font-weight: 600;
+    }
+    
+    .table{
+      width: fit-content;
+      margin: 15px;
+    }
+    h2{
+        padding: 5px;
+        color: #f8f8f8;
+        float: left;
+    }
+    button[type=button]{
+      height: auto;
+      margin-left: 5px;
+    }
+    #Welcome{
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    #fullname{
+      color:#222;
+      font-size: 14px;
+      color:indigo;
+      font-weight: 600;
+      padding-left: 5px;
+    }
+
+    .success-message {
+  background-color: rgb(133, 245, 28);
+  color: white;
+  padding: 5px;
+  text-align: left;
+}
+.alert-info{
+  background-color: #f5f5f5;
+  border:none;
+
+}
+    </style>
+
+
+
+<table>
+  
+</table>

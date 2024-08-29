@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "64f911f6ce6b40210c867cf4"
+  },
+  "role": "warden",
+  "firstname": "hassan",
+  "middlename": "sinavanda",
+  "lastname": "zuberi",
+  "email": "sinavanda@gmail.com",
+  "gender": "male",
+  "phone": "0694263028",
+  "password": "zuberi",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f94a6291781cc7241f47a5"
+  },
+  "role": "admin",
+  "firstname": "hassan",
+  "middlename": "mnyama",
+  "lastname": "zuberi",
+  "email": "hassanmnyawami@gmail.com",
+  "gender": "male",
+  "phone": "0694263028",
+  "password": "zuberi",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64f9b3f5eda8601ff91d4c0e"
+  },
+  "role": "admin",
+  "firstname": "RAMADHANI",
+  "middlename": "MUSA",
+  "lastname": "MTANI",
+  "email": "ramadhanimtani2000@gmail.com",
+  "gender": "female",
+  "phone": "0765789945",
+  "password": "MTANI",
+  "__v": 0
+}]

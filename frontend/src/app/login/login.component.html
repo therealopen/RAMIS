@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="container mt-4">
+    <div class="card">
+      <nav class="navbar navbar-dark bg-primary">
+        <h2>(RAS)</h2>
+      </nav>
+      <div class="row">
+        <div class="col-sm-12">
+          <form (ngSubmit)="login()">
+            <br>
+            <div *ngIf="logmsg" class="alert alert-danger">{{ logmsg }}</div>
+            <div class="form-group">
+              <label for="email">Username</label>
+              <input class="form-control login-input" style="text-transform: uppercase;" type="text" [(ngModel)]="email" [ngModelOptions]="{ standalone: true }" id="email" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input class="form-control login-input" type="password" [(ngModel)]="password" [ngModelOptions]="{ standalone: true }" id="password" placeholder="Password" required>
+            </div><br>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <label id="label1" for="">Only Authorized Users Allowed!</label>
+  </div>
+</div>
+
+<style>
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    margin: 5px auto;
+    font-size: small;
+    outline: none;
+    width: 300px;
+  }
+
+  .navbar {
+    margin: -5px;
+    padding: 0;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+
+  input[type="email"] {
+    text-transform: uppercase;
+  }
+
+  .container {
+    padding: 10px;
+    width: fit-content;
+  }
+
+  #link3 {
+    color: dodgerblue;
+    text-decoration: none;
+    float: right;
+    padding-left: 5px;
+  }
+
+  #link3:hover {
+    color: blueviolet;
+  }
+
+  #label1 {
+    color: dodgerblue;
+    margin-left: 40px;
+  }
+
+  h2 {
+    padding: 5px;
+    color: #f8f8f8;
+    float: left;
+  }
+
+  .card {
+    padding: 5px;
+  }
+
+  hr {
+    width: 100%;
+    height: 3px;
+  }
+</style>

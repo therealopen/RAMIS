@@ -1,0 +1,217 @@
+ <label id="status-left" *ngIf="studentRole || wardenRole">{{studentRole || wardenRole}}</label>
+ <label id="status-right" *ngIf="successfulLoginMessage"> {{successfulLoginMessage}}</label>
+ <label id="status-right" *ngIf="delmsg" class="alert alert-danger" role="alert">{{ delmsg }}</label>
+
+ <div class="container mt-4" >
+  <div>
+    <label for="list">Students list</label>           
+
+  </div>
+<div class="table-responsive">
+     <table class="table table-sm table-bordered">
+         
+       <tr>
+           <th scope="col">Names</th>
+            <th scope="col">email</th>
+            <th scope="col">gender</th>
+            <th scope="col">block</th>
+            <th scope="col">floor</th>
+            <th scope="col">room</th>
+            <th scope="col">wing</th>
+            <th scope="col">Phone</th>
+            <th colspan="4" scope="col">action</th>
+        </tr>
+        
+
+<tr *ngFor="let student of currentPageData">
+           <td>{{student.firstname|uppercase}}
+           {{student.middlename|uppercase }}
+            {{student.lastname|uppercase}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.block }}</td>
+            <td>{{student.floor|uppercase}}</td>
+            <td>{{student.room }}</td>
+            <td>{{student.wing|uppercase }}</td>
+            <td>{{student.phone|uppercase }}</td>
+         
+         <td>
+            <!-- <button type="submit" class="btn btn-danger" id="del-btn" (click)="deleteStudent(student._id)">Delete</button>            -->
+
+             <a class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" routerLink="../edit-student-room/{{student._id}}">Room Details</a>
+           </td>
+         </tr>
+      
+      </table>
+    </div>
+      <div class="pagination">
+        <button (click)="prevPage()" [disabled]="currentPage === 1" class="btn btn-primary">Previous</button>
+        <span>{{ currentPage }} / {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="btn btn-primary">Next</button>
+      </div>
+     </div> 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">student details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+           <!-- <div for="" *ngIf="successMessage" class="alert alert-success">{{successMessage}}</div> -->
+
+           <form [formGroup]="updateRoomForm" (ngSubmit)="updateRoomData()">
+            <div class="form-group">
+              <label for="block">Block</label>
+              <input formControlName="block" type="text" class="form-control form-control-sm" id="block" placeholder="Block">
+            </div>
+            <div class="form-group">
+              <label for="floor">Floor</label>
+              <input formControlName="floor" type="text" class="form-control form-control-sm" id="floor" placeholder="Floor">
+            </div>
+            <div class="form-group">
+              <label for="room">Room</label>
+              <input formControlName="room" type="text" class="form-control form-control-sm" id="room" placeholder="Room">
+            </div>
+            <div class="form-group">
+              <label for="wing">Wing</label>
+              <input formControlName="wing" type="text" class="form-control form-control-sm" id="wing" placeholder="Wing">
+            </div>
+            <div class="form-group">
+              <label for="wing">Phone</label>
+              <input formControlName="phone" type="text" class="form-control form-control-sm" id="phone" placeholder="Phone">
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+      </form>
+  </div>
+</div>
+<!-- register modal -->
+
+<!-- update student Room -->
+<!-- Modal -->
+<div class="modal fade" id="updateRoomModal" tabindex="-1" role="dialog" aria-labelledby="updateRoomModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateRoomModalLabel">Room Allocations</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <div for="" *ngIf="successMessage" class="alert alert-success">{{successMessage}}</div> -->
+
+        <form [formGroup]="updateRoomForm" (ngSubmit)="updateRoomData()">
+        <div class="form-group">
+          <label for="block">Block</label>
+          <input formControlName="block" type="text" class="form-control form-control-sm" id="block" placeholder="Block">
+        </div>
+        <div class="form-group">
+          <label for="floor">Floor</label>
+          <input formControlName="floor" type="text" class="form-control form-control-sm" id="floor" placeholder="Floor">
+        </div>
+        <div class="form-group">
+          <label for="room">Room</label>
+          <input formControlName="room" type="text" class="form-control form-control-sm" id="room" placeholder="Room">
+        </div>
+        <div class="form-group">
+          <label for="wing">Wing</label>
+          <input formControlName="wing" type="text" class="form-control form-control-sm" id="wing" placeholder="Wing">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input formControlName="phone" type="text" class="form-control form-control-sm" id="phone" placeholder="Phone">
+        </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Save changes" >
+      </div>
+      
+    </form>
+    </div>
+    
+  </div>
+</div>
+     <style>
+       h1{
+         text-transform: capitalize;
+       }
+     #link2-logout{
+         text-decoration: none;
+         font-size: 16px;
+         color: #f8f8f8;
+         padding: auto;
+         margin-right: 5px;
+         float: right;
+         font-weight: 600;
+     }
+     td{
+       font-size: 12px;
+       padding: 5px;
+       margin: auto;
+     }
+     th{
+       text-transform: capitalize;
+       align-content: center;
+       padding: 10px;
+       
+     }
+     H4{
+       padding-left: 5px;
+     }
+     #logged{
+       font-size: 16px;
+       color:#f8f8f8;
+       font-weight: 600;
+     }
+     
+     .table{
+       width: fit-content;
+       align-content: center;
+    
+     }
+     h2{
+         padding: 5px;
+         color: #f8f8f8;
+         float: left;
+     }
+     button[type=button],[type=submit]{
+       height: auto;
+       margin-left: 5px;
+       padding: 5px
+     }
+     #Welcome{
+       font-weight: 600;
+       font-size: 16px;
+       text-transform: uppercase;
+     }
+     #fullname{
+       color:#222;
+       font-size: 16px;
+       color:indigo;
+       font-weight: 600;
+       padding-left: 5px;
+     }
+     td{
+        padding: 10px
+     }
+ .mb-0{
+  float:left;
+  margin: 10px;
+ }
+ .btn-dange{
+  background-color: darkred;
+ }
+     </style>
+ 
+ 
+ 
